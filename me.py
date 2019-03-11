@@ -10,12 +10,15 @@ def init_db():
     """ Method to initialize the database """
     with app.app_context():
         conn = psycopg2.connect(url)
+<<<<<<< HEAD
         # url_db = Config.DATABASE_URL
         # conn = psycopg2.connect(url_db)
         cursor = conn.cursor()
         sql = current_app.open_resource('tables.sql', mode='r')
         cursor.execute(sql.read())
 
+=======
+>>>>>>> after after Creating Conflict
         conn.commit()
         return conn
 
