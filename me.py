@@ -15,6 +15,7 @@ def init_db():
         cursor = conn.cursor()
         sql = current_app.open_resource('tables.sql', mode='r')
         cursor.execute(sql.read())
+
         conn.commit()
         return conn
 
@@ -41,6 +42,7 @@ def destroy_db():
         users = "DROP TABLE IF EXISTS users CASCADE"
         tables = [users]
         try:
+
             for table in tables:
                 cursor.execute(table)
             conn.commit()
@@ -53,4 +55,5 @@ def tables():
 """
 	queries = [tb1]
 	return queries
+
 """
