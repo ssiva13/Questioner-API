@@ -11,7 +11,6 @@ def init_db():
     with app.app_context():
         conn = psycopg2.connect(url)
         # url_db = Config.DATABASE_URL
-        # conn = psycopg2.connect(url_db)
         conn.commit()
         return conn
 
